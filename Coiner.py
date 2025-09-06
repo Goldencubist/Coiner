@@ -13,7 +13,7 @@ moeda_x = random.randint(1, largura_tela)
 moeda_y = random.randint(1, altura_tela)
 AMARELO = (255, 255, 0)
 BRANCO = (255, 255, 255)
-pontuação = 0
+pontuacao = 0
 tempo_do_ultimo_combo = 0
 multiplicador_combo = 1
 fonte = pygame.font.SysFont('Arial', 30)
@@ -43,7 +43,7 @@ while rodando:
     if distancia < 30:
         moeda_x = random.randint(1, largura_tela)
         moeda_y = random.randint(1, altura_tela)
-        pontuação += 1 * multiplicador_combo
+        pontuacao += 1 * multiplicador_combo
         multiplicador_combo += 1
         tempo_do_ultimo_combo = pygame.time.get_ticks()
     if temporodando - tempo_do_ultimo_combo >= 3000:
@@ -51,7 +51,7 @@ while rodando:
     tela.fill((0, 0, 0))
     pygame.draw.circle(tela, BRANCO, (posicao_x, posicao_y), 20)
     pygame.draw.circle(tela, AMARELO, (moeda_x, moeda_y), 10)
-    textodepontos = fonte.render(f'Pontos: {pontuação}', True, BRANCO)
+    textodepontos = fonte.render(f'Pontos: {pontuacao}', True, BRANCO)
     texto_combo = fonte.render(f'Combo: {multiplicador_combo}x', True, (255, 255, 255))
     texto_combo_rect = texto_combo.get_rect()
     texto_combo_rect.right = largura_tela - 10
